@@ -158,11 +158,13 @@
      ```
      </details>
 
-  10. Apply below manifests:
+  10. Run command and Apply below manifests:
 
       <details>
-
+      
       ```
+      kubectl expose deployment hr-web-app --type=NodePort --port=8080 --name=hr-web-app-service --dry-run=client -o yaml > hr-web-app-service.yaml
+  
       apiVersion: v1
       kind: Service
       metadata:
